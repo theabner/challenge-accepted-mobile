@@ -1,21 +1,67 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './src/pages/Home';
+import SearchResults from './src/pages/SearchResults';
+import WeatherForecast from './src/pages/WeatherForecast';
+import SearchHistoryProvider from './src/context/searchHistoryContext';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SearchHistoryProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen
+            name={"Home"}
+            component={Home}
+            options={{
+              title: 'Clima Tempo',
+              headerTintColor: '#ffffff',
+              headerTitleAlign: 'center',
+              headerStyle: {
+                backgroundColor: '#004983',
+                headerTintColor: '#ffffff',
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                },
+              },
+            }} />
+          <Stack.Screen
+            name={"SearchResults"}
+            component={SearchResults}
+            options={{
+              title: 'Resultados',
+              headerTintColor: '#ffffff',
+              headerTitleAlign: 'center',
+              headerStyle: {
+                backgroundColor: '#004983',
+                headerTintColor: '#ffffff',
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                },
+              },
+            }} />
+          <Stack.Screen
+            name={"WeatherForecast"}
+            component={WeatherForecast}
+            options={{
+              title: 'Previsão do Tempo',
+              headerTintColor: '#ffffff',
+              headerTitleAlign: 'center',
+              headerStyle: {
+                backgroundColor: '#004983',
+                headerTintColor: '#ffffff',
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                },
+              },
+            }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SearchHistoryProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
