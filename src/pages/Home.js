@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
-import { SearchTime } from './SearchTime';
+import { SearchWeather } from './SearchWeather';
 import { SearchHistory } from './SearchHistory';
 
-const SearchRoute = () => <SearchTime />;
+const SearchRoute = () => <SearchWeather />;
 
 const RecentsRoute = () => <SearchHistory/>;
 

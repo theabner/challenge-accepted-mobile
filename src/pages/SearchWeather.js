@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { saveSearchHistory } from '../storage/searchHistoryService';
 import { useSearchHistory } from '../context/searchHistoryContext';
 
-export const SearchTime = () => {
+export const SearchWeather = () => {
   const navigation = useNavigation();
   const [city, setCity] = useState('');
   const [emptyCitieMessage, SetEmptyCitieMessage] = useState(false);

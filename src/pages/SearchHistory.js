@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { List, Divider } from 'react-native-paper';
 import { ScrollView, FlatList, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { getSearchHistory } from '../stoage/searchHistoryService';
+import { getSearchHistory } from '../storage/searchHistoryService';
 import { getCitie } from '../api/citie';
 import { useSearchHistory } from '../context/searchHistoryContext';
 
